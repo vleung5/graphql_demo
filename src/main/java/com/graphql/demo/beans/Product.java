@@ -14,9 +14,9 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Table(name = "product", catalog = "xxx")
+@Table(name = "product", schema = "demoSchema")
 public class Product {
-	
+		
     @Id
     @GraphQLQuery(name = "productNumber", description = "A product's number")
     @Column(name = "prod_no")

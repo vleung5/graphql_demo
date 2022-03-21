@@ -3,17 +3,27 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.graphql</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>graphql_demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>graphql_demo</name>
 	<url>http://maven.apache.org</url>
+	
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<springboot.version>2.1.5.RELEASE</springboot.version>
+		<spqr.version>0.0.4</spqr.version>
+		<gson.version>2.6.2</gson.version>
+		<jconn.version>7.04</jconn.version>
+		<spring-security-oauth.version>2.4.0.RELEASE</spring-security-oauth.version>
+		<junit-jupiter.version>5.8.2</junit-jupiter.version>
+		<rest-assured.version>4.4.0</rest-assured.version>
 	</properties>
 
 	<parent>
@@ -34,6 +44,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -51,19 +65,67 @@
 		<dependency>
 			<groupId>io.leangen.graphql</groupId>
 			<artifactId>graphql-spqr-spring-boot-starter</artifactId>
-			<version>0.0.4</version>
+			<version>${spqr.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>2.6.2</version>
+			<version>${gson.version}</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.sybase</groupId> -->
+<!-- 			<artifactId>jconn4</artifactId> -->
+<!-- 			<version>${jconn.version}</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+    			<artifactId>h2</artifactId>
+    			<version>1.4.194</version>
 		</dependency>
 
 		<dependency>
-			<groupId>sybase</groupId>
-			<artifactId>jconn</artifactId>
-			<version>4_RELEASE</version>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>${spring-security-oauth.version}</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-engine</artifactId>
+		    <version>${junit-jupiter.version}</version>
+		    <scope>test</scope>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>io.rest-assured</groupId> -->
+<!-- 		    <artifactId>rest-assured</artifactId> -->
+<!-- 		    <version>${rest-assured.version}</version> -->
+<!-- 		    <scope>test</scope> -->
+<!-- 		</dependency> -->
+
+			<dependency>
+			    <groupId>com.sun.xml.bind</groupId>
+			    <artifactId>jaxb-core</artifactId>
+			    <version>2.3.0.1</version>
+			</dependency>
+			<dependency>
+			    <groupId>javax.xml.bind</groupId>
+			    <artifactId>jaxb-api</artifactId>
+			    <version>2.3.1</version>
+			</dependency>
+			<dependency>
+			    <groupId>com.sun.xml.bind</groupId>
+			    <artifactId>jaxb-impl</artifactId>
+			    <version>2.3.1</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.javassist</groupId>
+			    <artifactId>javassist</artifactId>
+			    <version>3.25.0-GA</version>
+			</dependency>
 
 	</dependencies>
 
